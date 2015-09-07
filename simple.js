@@ -18,7 +18,6 @@ SensorTag.discover(function(sensorTag) {
   
   sensorTag.on('disconnect', function() {
     console.log('SensorTag disconnected!');
-    process.exit(0);
   });
 
 });
