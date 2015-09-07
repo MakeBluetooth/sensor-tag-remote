@@ -1,0 +1,23 @@
+{
+  "name": "sensor-tag-remote",
+  "version": "1.0.0",
+  "description": "Bluetooth LE remote using TI SensorTag",
+  "main": "remote.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakeBluetooth/sensor-tag-remote.git"
+  },
+  "author": "Don Coleman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MakeBluetooth/sensor-tag-remote/issues"
+  },
+  "homepage": "https://github.com/MakeBluetooth/sensor-tag-remote#readme",
+  "dependencies": {
+    "noble": "^1.1.0",
+    "robotjs": "^0.2.4"
+  }
+}
