@@ -13,14 +13,10 @@ noble.on('discover', function(peripheral) {
 
   var localName = peripheral.advertisement.localName;
 
-  // The SensorTag doesn't advertise any services, so filter based on local name
+  // find SensorTag based on local name
   if (localName && localName.match(/Sensor/)) {
-
-    // we found a SensorTag, stop scanning
     noble.stopScanning();
-
     console.log('Attempting to connect to ' + localName);
-
     connectAndSetUpSensorTag(peripheral);
   }
 });
@@ -45,6 +41,10 @@ function connectAndSetUpSensorTag(peripheral) {
   peripheral.on('disconnect', onDisconnect);
 }
 
+function onDisconnect() {
+  console.log('Peripheral disconnected!');
+}
+
 function onServicesAndCharacteristicsDiscovered(error, services, characteristics) {
 
   if (error) {
@@ -66,10 +66,6 @@ function onServicesAndCharacteristicsDiscovered(error, services, characteristics
 
   // called when the data changes
   characteristic.on('data', onCharacteristicData);
-}
-
-function onDisconnect() {
-  console.log('Peripheral disconnected!');
 }
 
 function onCharacteristicData(data, isNotification) {
