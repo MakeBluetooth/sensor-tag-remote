@@ -15,5 +15,10 @@ SensorTag.discover(function(sensorTag) {
       robot.keyTap('left');
     }
   });
+  
+  sensorTag.on('disconnect', function() {
+    console.log('SensorTag disconnected!');
+    process.exit(0);
+  });
 
 });
